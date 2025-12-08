@@ -8,5 +8,6 @@ def get_connected():
         dbname=os.environ["DB_NAME"],
         user=os.environ["DB_USER"],
         password=os.environ["DB_PASSWORD"],
-        sslmode="require"
+        sslmode="require",
+        options='-c hostaddr=<IPv4_ADDRESS_OF_DB_HOST>'
     )
