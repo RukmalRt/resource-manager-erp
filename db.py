@@ -1,12 +1,12 @@
 import streamlit as st
 import psycopg2
-
+import os
 def get_connected():
     return psycopg2.connect(
-        host=st.secrets["db_host"],
-        port=st.secrets["db_port"],
-        dbname=st.secrets["db_name"],
-        user=st.secrets["db_user"],
-        password=st.secrets["db_password"],
+        host=os.environ["DB_HOST"],
+        port=os.environ["DB_PORT"],
+        dbname=os.environ["DB_NAME"],
+        user=os.environ["DB_USER"],
+        password=os.environ["DB_PASSWORD"],
         sslmode="require"
     )
