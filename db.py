@@ -8,4 +8,5 @@ def get_connected():
         password=st.secrets["postgres"]["db_password"],
         host=st.secrets["postgres"]["db_host"],
         port=st.secrets["postgres"]["db_port"]
+         sslmode="require"
     )
