@@ -3,9 +3,9 @@ import psycopg2
 import os
 def get_connected():
     return psycopg2.connect(
-        dbname=os.getenv("DB_NAME"),
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD"),
-        host=os.getenv("DB_HOST"),
-        port=os.getenv("DB_PORT", "5432"),
+        dbname=st.secrets["postgres"]["db_name"],
+        user=st.secrets["postgres"]["db_user"],
+        password=st.secrets["postgres"]["db_password"],
+        host=st.secrets["postgres"]["db_host"],
+        port=st.secrets["postgres"]["db_port"]
     )
